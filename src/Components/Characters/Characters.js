@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./Characters.css";
 
 class Characters extends Component {
   constructor() {
@@ -19,11 +20,11 @@ class Characters extends Component {
   render() {
     let charactersButtons = this.state.characters.map((character) => {
         return <Link to={`/character/${character}`}>
-            <button>{character}</button>
+            <button className="character-button">{character}</button>
         </Link>
     })
     return (
-      <div>
+      <div className="characters-button-container">
         {charactersButtons}
       </div>
     );

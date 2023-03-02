@@ -1,0 +1,21 @@
+.character-button{
+    padding: 1rem;
+    white-space: nowrap;
+    text-align: center;
+    width:100%;
+}
+
+.characters-button-container{
+    /* display: grid;
+    gap: 1rem;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(5rem, 1fr)); */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.characters-button-container > * {
+    flex:1
+}
