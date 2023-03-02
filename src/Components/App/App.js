@@ -13,7 +13,16 @@ class App extends Component {
     this.state = {
       favorites: [],
   }
+
 }
+  addFavorite = (quote) => {
+  this.setState({favorites: [...this.state.favorites, quote]})
+  }
+  deleteFavorite = (quote) => {
+    let newFavorites = this.state.favorites.filter((favorite) => {
+      return favorite !== quote})
+    this.setState({favorites: newFavorites})}
+
   render() {
     return (
       <main className="App">
