@@ -28,8 +28,10 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/character/:characterName" render={({match}) => <CharacterQuotes name={match.params.characterName}/>}/>
-          <Route exact path ="/favorites" render={() => <FavoritesView favorites={this.state.favorites}/>}/>
+          <Route exact path="/character/:characterName" render={({match}) => <CharacterQuotes 
+          addFavorite={this.addFavorite}
+          name={match.params.characterName}/>}/>
+          <Route exact path ="/favorites" render={() => <FavoritesView deleteFavorite={this.deleteFavorite} favorites={this.state.favorites}/>}/>
           <Route path="*" render={() => <ErrorView message="Page Not Found"/>} />
         </Switch>
       </main>

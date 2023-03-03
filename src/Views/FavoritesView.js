@@ -6,7 +6,7 @@ const FavoritesView = (props) => {
   return (
     <div>
         <Header />
-      <Favorites favorites={props.favorites}/>
+      <Favorites deleteFavorite={props.deleteFavorite} favorites={props.favorites}/>
     </div>
   );
 }

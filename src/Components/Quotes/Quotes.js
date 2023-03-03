@@ -15,22 +15,26 @@ class Quotes extends Component {
         this.setState({ quotes: data });
       })
   }
-  render() {
+
+  displayQuotes = () => {
     let quotes = this.state.quotes?.map((quote) => {
       return (
         <figure className="quote-container">
           <blockquote>
-            <p className="quote">{quote.quote}</p>
+            <q className="quote">{quote.quote}</q>
           </blockquote>
           <figcaption>
             &mdash; {quote.character}, <cite>{quote.anime}</cite>
           </figcaption>
-          <button>❤️</button>
+          <button className="add-to-favorites-button" onClick={() => this.props.addFavorite(quote)}>❤️</button>
         </figure>)
     })
+    return quotes
+  }
+  render() {
     return (
       <div className="quotes-container">
-        {quotes}
+        {this.displayQuotes()}
       </div>
     );
   }

@@ -6,7 +6,7 @@ const CharacterQuotes = (props) => {
   return (
     <div>
       <Header />
-      <Quotes name={props.name}/>
+      <Quotes name={props.name} addFavorite={props.addFavorite}/>
     </div>
   );
 }
