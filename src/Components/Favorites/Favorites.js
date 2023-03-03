@@ -1,5 +1,7 @@
 import React from "react";
 import './Favorites.css';
+import PropTypes from 'prop-types';
+
 const Favorites = (props) => {
 
     let displayFavorites = props.favorites?.map((quote) => {
@@ -25,3 +27,8 @@ const Favorites = (props) => {
 }
 
 export default Favorites;
+
+Favorites.propTypes = {
+  deleteFavorite: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired,
+}

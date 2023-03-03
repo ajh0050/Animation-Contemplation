@@ -1,14 +1,20 @@
 import React from "react";
 import Quotes from "../Components/Quotes/Quotes";
 import Header from "../Components/Header/Header";
+import PropTypes from "prop-types";
 
-const CharacterQuotes = (props) => {
+const CharacterQuotesView = (props) => {
   return (
     <div>
       <Header />
       <Quotes name={props.name} addFavorite={props.addFavorite}/>
     </div>
-  );
+  )
 }
 
-export default CharacterQuotes;
+export default CharacterQuotesView;
+
+CharacterQuotesView.propTypes = {
+  name: PropTypes.string.isRequired,
+  addFavorite: PropTypes.func.isRequired,
+}

@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../../Views/Home';
-import CharacterQuotes from '../../Views/CharacterQuotes';
+import CharacterQuotesView from '../../Views/CharacterQuotesView';
 import FavoritesView from '../../Views/FavoritesView';
 import ErrorView from '../../Views/ErrorView';
 
@@ -28,7 +28,7 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/character/:characterName" render={({match}) => <CharacterQuotes 
+          <Route exact path="/character/:characterName" render={({match}) => <CharacterQuotesView 
           addFavorite={this.addFavorite}
           name={match.params.characterName}/>}/>
           <Route exact path ="/favorites" render={() => <FavoritesView deleteFavorite={this.deleteFavorite} favorites={this.state.favorites}/>}/>

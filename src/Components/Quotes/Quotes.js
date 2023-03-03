@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Quotes.css";
+import PropTypes from "prop-types";
 
 class Quotes extends Component {
   constructor() {
@@ -41,3 +42,8 @@ class Quotes extends Component {
 }
 
 export default Quotes;
+
+Quotes.propTypes = {
+  name: PropTypes.string.isRequired,
+  addFavorite: PropTypes.func.isRequired,
+}
