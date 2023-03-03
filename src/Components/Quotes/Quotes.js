@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Quotes.css";
 import PropTypes from "prop-types";
+import { getQuotes } from '../../ApiCalls'
 
 class Quotes extends Component {
   constructor() {
@@ -10,8 +11,7 @@ class Quotes extends Component {
     };
   }
   componentDidMount() {
-    fetch(`https://animechan.vercel.app/api/quotes/character?name=${this.props.name}`)
-      .then((response) => response.json())
+    getQuotes(this.props.name)
       .then((data) => {
         this.setState({ quotes: data });
       })

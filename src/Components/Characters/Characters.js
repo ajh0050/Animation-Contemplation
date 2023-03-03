@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Characters.css";
+import  { getCharacters } from "../../ApiCalls";
 
 class Characters extends Component {
     constructor() {
@@ -11,9 +12,7 @@ class Characters extends Component {
         }
     }
     componentDidMount() {
-        fetch("https://animation-contemplation-api.fly.dev/characters")
-            .then((response) => response.json())
-            .then((data) => {
+        getCharacters().then((data) => {
                 this.setState({ characters: data })
             });
     }
