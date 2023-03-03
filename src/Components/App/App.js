@@ -32,7 +32,7 @@ class App extends Component {
           addFavorite={this.addFavorite}
           name={match.params.characterName}/>}/>
           <Route exact path ="/favorites" render={() => <FavoritesView deleteFavorite={this.deleteFavorite} favorites={this.state.favorites}/>}/>
-          <Route path="*" render={() => <ErrorView message="Page Not Found"/>} />
+          <Route path="*" render={() => <ErrorView error="Page Not Found"/>} />
         </Switch>
       </main>
     );

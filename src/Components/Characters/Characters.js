@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Characters.css";
 import  { getCharacters } from "../../ApiCalls";
+import Error from "../Error/Error"
 
 class Characters extends Component {
     constructor() {
@@ -9,21 +10,20 @@ class Characters extends Component {
         this.state = {
             characters: [],
             search: "",
+            error: null,
         }
     }
     componentDidMount() {
-        getCharacters().then((data) => {
+        getCharacters()
+        .then((data) => {
                 this.setState({ characters: data })
-            });
+            })
+        .catch((error) => {
+            this.setState({ error: error })
+        })
     }
     handleChange = (event) => {
         this.setState({ search: event.target.value })
-    }
-
-    isLoading = () => {
-        if (this.state.characters.length === 0) {
-            return <h1>Loading...</h1>;
-        }
     }
 
     searchNotEmpty = () => {
@@ -64,10 +64,9 @@ class Characters extends Component {
     render() {
         return (
             <div className="characters-section-container">
-                {this.isLoading()}
-                <form>
-                        <input type="text" name="search" value={this.state.search} onChange={this.handleChange} placeholder="Search for a character" />
-                </form>
+                {this.state.error && <Error error={this.state.error}/>}
+                {!this.state.error && <form><input type="text" name="search" value={this.state.search} onChange={this.handleChange} placeholder="Search for a character" /></form>}
+                {(this.state.characters.length === 0 && !this.state.error) && <h1 className="loading-text">Loading...</h1>}
                 {this.state.search === "" ? this.searchEmpty() : this.searchNotEmpty()}
             </div>
         );

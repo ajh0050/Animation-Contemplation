@@ -17,5 +17,4 @@ function getQuotes (character) {
         })
 }
 
-
 export { getCharacters, getQuotes };
