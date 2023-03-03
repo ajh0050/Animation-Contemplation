@@ -2,18 +2,23 @@ import React, { Component } from "react";
 import "./Quotes.css";
 import PropTypes from "prop-types";
 import { getQuotes } from '../../ApiCalls'
+import Error from "../Error/Error"
 
 class Quotes extends Component {
   constructor() {
     super();
     this.state = {
       quotes: [],
+      error: null,
     };
   }
   componentDidMount() {
     getQuotes(this.props.name)
       .then((data) => {
         this.setState({ quotes: data });
+      })
+      .catch((error) => {
+        this.setState({ error: error });
       })
   }
 
@@ -35,6 +40,7 @@ class Quotes extends Component {
   render() {
     return (
       <div className="quotes-container">
+        {this.state.error && <Error error={this.state.error}/> }  
         {this.displayQuotes()}
       </div>
     );
