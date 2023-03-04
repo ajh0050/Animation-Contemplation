@@ -17,6 +17,7 @@ class App extends Component {
 
 }
   addFavorite = (quote) => {
+    if(this.state.favorites.includes(quote)){return};
   this.setState({favorites: [...this.state.favorites, quote]})
   }
   deleteFavorite = (quote) => {
