@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './Error.css';
 
 const Error = (props) => {
   return (
-    <div>
-      <h1>{props.error.toString()}</h1>
+    <div className="error-message-container">
+      <h1 className="error-message">{props.error.toString()}</h1>
     </div>
   );
 }

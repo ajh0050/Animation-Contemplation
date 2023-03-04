@@ -7,7 +7,7 @@ const ErrorView = (props) => {
   return (
     <div>
       <Header />
-      <Error message={props.error} />
+      <Error error={props.error} />
     </div>
   );
 }
