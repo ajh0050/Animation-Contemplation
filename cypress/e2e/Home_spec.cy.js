@@ -37,5 +37,14 @@ describe('Home view renders all elements it should', () => {
     cy.intercept("GET",'https://animechan.vercel.app/api/quotes/character?name=Archer',{ fixture: 'character-quotes.json'})
     cy.get('.character-button').contains('Archer').click()
     cy.url().should('include', '/character/Archer')
+    cy.visit('http://localhost:3000')
+    cy.get('.search-bar').clear().type('aaa')
+    cy.get('.no-results').contains('No characters found')
+  })
+
+  it('Error should be displayed if failed to get characters', () => {
+    cy.intercept("GET",'https://animation-contemplation-api.fly.dev/characters',{ statusCode: 500})
+    cy.visit('http://localhost:3000')
+    cy.get('.error-message').contains('Failed to get characters')
   })
 })

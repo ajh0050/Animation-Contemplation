@@ -33,7 +33,7 @@ class Characters extends Component {
                 return character.toLowerCase().includes(this.state.search.toLowerCase())
             })
             if (filteredCharacters.length === 0) {
-                return <h1>No characters found</h1>
+                return <h3 className="no-results">No characters found</h3>
             }
             let charactersButtons = filteredCharacters.map((character) => {
                 return (
