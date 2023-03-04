@@ -35,9 +35,11 @@ class Characters extends Component {
                 return <h1>No characters found</h1>
             }
             let charactersButtons = filteredCharacters.map((character) => {
-                return <Link to={`/character/${character}`}>
+                return (
+                <Link to={`/character/${character}`}>
                     <button className="character-button">{character}</button>
                 </Link>
+                )
             })
             return (
                 <div className="characters-button-container">
@@ -65,7 +67,7 @@ class Characters extends Component {
         return (
             <div className="characters-section-container">
                 {this.state.error && <Error error={this.state.error}/>}
-                {!this.state.error && <form><input type="text" name="search" value={this.state.search} onChange={this.handleChange} placeholder="Search for a character" /></form>}
+                {!this.state.error && <form className="search-form"><h3 className="search-title">Search any anime character to get quotes from them!</h3><input className="search-bar" type="text" name="search" value={this.state.search} onChange={this.handleChange} placeholder="Search for a character" /></form>}
                 {(this.state.characters.length === 0 && !this.state.error) && <h1 className="loading-text">Loading...</h1>}
                 {this.state.search === "" ? this.searchEmpty() : this.searchNotEmpty()}
             </div>

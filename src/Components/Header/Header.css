@@ -1,7 +1,7 @@
 .header {
     box-sizing: border-box;
-    background-color: #fff;
-    border-bottom: 1px solid #e1e4e8;
+    background-color: #6096B4;
+    /* border-bottom: 1px solid #e1e4e8; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,21 +11,21 @@
 }
 
 .home-link {
-    color: #0366d6;
+    color: #EEE9DA;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
 }
 
 .favorites-link {
-    color: #0366d6;
+    color: #EEE9DA;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
 }
 
 .app-title {
-    color: #0366d6;
+    color: #EEE9DA;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
