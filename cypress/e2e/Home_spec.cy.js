@@ -29,12 +29,13 @@ describe('Home view renders all elements it should', () => {
   })
 
   it('The search bar is functional', () => {
-    cy.get('.search-bar').type('aa')
-    cy.get('.characters-button-container').children().should('have.length', 5)
+    cy.get('.search-bar').type('arch')
+    cy.get('.characters-button-container').children().should('have.length', 4)
     cy.get('.search-bar').clear()
-    cy.get('.search-bar').type('aan')
+    cy.get('.search-bar').type('archer')
     cy.get('.characters-button-container').children().should('have.length', 1)
-    cy.get('.character-button').contains('Aang').click()
-    cy.url().should('include', '/character/Aang')
+    cy.intercept("GET",'https://animechan.vercel.app/api/quotes/character?name=Archer',{ fixture: 'character-quotes.json'})
+    cy.get('.character-button').contains('Archer').click()
+    cy.url().should('include', '/character/Archer')
   })
 })
