@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Characters.css";
 import  { getCharacters } from "../../ApiCalls";
 import Error from "../Error/Error"
+import Loading from "../Loading/Loading"
 
 class Characters extends Component {
     constructor() {
@@ -68,7 +69,7 @@ class Characters extends Component {
             <div className="characters-section-container">
                 {this.state.error && <Error error={this.state.error}/>}
                 {!this.state.error && <form className="search-form"><h3 className="search-title">Search any anime character to get quotes from them!</h3><input className="search-bar" type="text" name="search" value={this.state.search} onChange={this.handleChange} placeholder="Search for a character" /></form>}
-                {(this.state.characters.length === 0 && !this.state.error) && <h1 className="loading-text">Loading...</h1>}
+                {(this.state.characters.length === 0 && !this.state.error) && <Loading />}
                 {this.state.search === "" ? this.searchEmpty() : this.searchNotEmpty()}
             </div>
         );
