@@ -1,7 +1,6 @@
 .header {
     box-sizing: border-box;
     background-color: #6096B4;
-    /* border-bottom: 1px solid #e1e4e8; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,11 +22,23 @@
     font-weight: 600;
     text-decoration: none;
 }
-
+.titles-container {
+    margin: 1rem
+}
 .app-title {
     color: #EEE9DA;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
+    margin: 0;
+}
+
+.app-subtitle{
+    color: #EEE9DA;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    margin:0;
 }

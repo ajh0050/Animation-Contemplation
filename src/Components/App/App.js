@@ -5,6 +5,7 @@ import Home from '../../Views/Home';
 import CharacterQuotesView from '../../Views/CharacterQuotesView';
 import FavoritesView from '../../Views/FavoritesView';
 import ErrorView from '../../Views/ErrorView';
+import Header from '../Header/Header'
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/character/:characterName" render={({match}) => <CharacterQuotesView 
