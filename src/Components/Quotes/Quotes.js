@@ -3,6 +3,7 @@ import "./Quotes.css";
 import PropTypes from "prop-types";
 import { getQuotes } from '../../ApiCalls'
 import Error from "../Error/Error"
+import Loading from "../Loading/Loading"
 
 class Quotes extends Component {
   constructor() {
@@ -30,9 +31,8 @@ class Quotes extends Component {
             <q className="quote">{quote.quote}</q>
           </blockquote>
           <figcaption>
-            &mdash; {quote.character}, <cite>{quote.anime}</cite>
+            &mdash; {quote.character}, <cite>{quote.anime}</cite> <button className="add-to-favorites-button" onClick={() => this.props.addFavorite(quote)}>❤️</button>
           </figcaption>
-          <button className="add-to-favorites-button" onClick={() => this.props.addFavorite(quote)}>❤️</button>
         </figure>)
     })
     return quotes
@@ -40,6 +40,7 @@ class Quotes extends Component {
   render() {
     return (
       <div className="quotes-container">
+        {this.state.quotes.length === 0 && <Loading />}
         {this.state.error && <Error error={this.state.error}/> }  
         {this.displayQuotes()}
       </div>
