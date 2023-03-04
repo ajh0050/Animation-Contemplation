@@ -23,11 +23,23 @@
     font-weight: 600;
     text-decoration: none;
 }
-
+.titles-container {
+    margin: 1rem
+}
 .app-title {
     color: #EEE9DA;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
+    margin: 0;
+}
+
+.app-subtitle{
+    color: #EEE9DA;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    margin:0;
 }
