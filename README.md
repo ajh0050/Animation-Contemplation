@@ -1,4 +1,4 @@
-#Tune Spoon
+# Animation Contemplation
 
 ## Preview:
 ![A preview of the apps home page](https://user-images.githubusercontent.com/36003417/222986579-9b94af3b-1660-4b2c-b741-7702a641a1a3.png)
@@ -17,7 +17,7 @@
 - Create a responsive mobile first experience for the application
 
 ## Description
-Animation Contemplation is a fun single user application where you can find, save, and delete quotes from your favorite anime characters! Designed with a mobile first perspective it utilizes react to build a fast and user friendly experience. 
+Animation Contemplation is a fun single user application where you can find, save, and delete quotes from your favorite anime characters! This allows you to ponder some of the memorable sayings from your most loved characters. This app is designed with a mobile first perspective, and it utilizes react to build a fast and user friendly experience. 
 
 ## Built with
 - React.js
