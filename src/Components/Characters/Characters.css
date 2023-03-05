@@ -5,8 +5,9 @@
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
-    min-height: calc(100vh - 5rem);
+    min-height: calc(100vh - 20rem);
     background-color: #93BFCF;
+    font-family: 'Bangers', cursive;
 }
 
 .character-button{
@@ -18,9 +19,12 @@
     border-radius: 0.5rem;
     background-color: #fff;
     color: #000;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 0.5rem;
     cursor: pointer;
+    font-family: 'Bangers', cursive;
+    font-weight: 100;
+    /* font-size: 2rem; */
 }
 
 .character-button:hover{
@@ -40,10 +44,11 @@
 }
 
 .search-title  {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 100;
     margin: 1rem;
-    color: #000
+    color: #000;
+    text-align: center;
 }
 
 .search-bar {
@@ -53,6 +58,7 @@
     justify-content: center;
     color: #000;
     height: 2rem;
+    text-align: center;
 }
 
 .search-form {

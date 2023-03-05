@@ -5,7 +5,7 @@
     justify-content: space-around;
     width: 100%;
     height: 100%;
-    min-height: calc(100vh - 5rem);
+    min-height: calc(100vh - 20rem);
     background-color: #93BFCF;
 }
 
@@ -28,6 +28,7 @@ figcaption {
 
 .quote {
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .add-to-favorites-button {

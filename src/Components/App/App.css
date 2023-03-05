@@ -1,1 +1,5 @@
-
+* {
+    font-family: 'Bangers', cursive;
+    font-weight: 100;
+    box-sizing: border-box;
+}
